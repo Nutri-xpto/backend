@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.sql.Time;
 import java.util.List;
 
 import javax.persistence.CollectionTable;
@@ -26,7 +27,7 @@ public class Refeicao{
     @CollectionTable(name = "alimento", joinColumns = @JoinColumn(name = "id"))
     private List<String> alimentos;
 
-    @Column(name = "source", nullable = false)
-    private String Source;
+    @Column(name = "horario", columnDefinition = "TIME", nullable = false)
+    private Time horario;
     
 }
