@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.dto.NutritionistDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -56,6 +57,10 @@ public class Nutritionist {
                 ", educations=" + educations +
                 ", clinicAddress=" + clinicAddress +
                 '}';
+    }
+
+    public static Nutritionist dtoToEntity(NutritionistDTO dto){
+        return new Nutritionist(dto.getName(), dto.getEmail(), dto.getPassword(), dto.getCode(), dto.getEducations(), dto.getClinicAddress()) ;
     }
 
     @Override
