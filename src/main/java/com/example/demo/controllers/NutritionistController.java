@@ -26,6 +26,6 @@ public class NutritionistController {
 
     @PostMapping("/nutritionist")
     ResponseEntity<Nutritionist> create(@RequestBody NutritionistDTO nutri){
-        return new ResponseEntity<Nutritionist>(this.repository.save( Nutritionist.dtoToEntity(nutri)), HttpStatus.CREATED )
+        return new ResponseEntity<Nutritionist>(this.repository.save( Nutritionist.dtoToEntity(nutri)), HttpStatus.CREATED );
     }
 }
