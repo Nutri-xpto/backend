@@ -20,17 +20,17 @@ public class RefeicaoController {
     }
 
     @GetMapping("/refeicoes")
-    ResponseEntity<List<Refeicao>> getAll(){
-        return new ResponseEntity<List<Refeicao>>( this.repository.findAll(), HttpStatus.OK );
-    }
-    
-    @PostMapping("/refeicao")
-    ResponseEntity<Refeicao> createRefeicao(@RequestBody RefeicaoDTO refeicao){
-        return new ResponseEntity<Refeicao>(this.repository.save( Refeicao.dtoToEntity(refeicao)), HttpStatus.CREATED ) ;
+    ResponseEntity<List<Refeicao>> getAll() {
+        return new ResponseEntity<List<Refeicao>>(this.repository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/refeicao/{id}")
-    ResponseEntity<Refeicao> getRefeicao(@PathVariable int id){
-        return new ResponseEntity<Refeicao>( this.repository.findById(Long.valueOf(id)).get(), HttpStatus.OK);
+    ResponseEntity<Refeicao> getRefeicao(@PathVariable int id) {
+        return new ResponseEntity<Refeicao>(this.repository.findById(Long.valueOf(id)).get(), HttpStatus.OK);
+    }
+
+    @PostMapping("/refeicao")
+    ResponseEntity<Refeicao> createRefeicao(@RequestBody RefeicaoDTO refeicao) {
+        return new ResponseEntity<Refeicao>(this.repository.save(Refeicao.dtoToEntity(refeicao)), HttpStatus.CREATED);
     }
 }

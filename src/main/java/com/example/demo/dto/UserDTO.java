@@ -1,4 +1,15 @@
 package com.example.demo.dto;
 
-public class UserDto {
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
+public class UserDTO {
+    private String username;
+    private String password;
+    private String role;
 }
