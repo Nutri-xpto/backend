@@ -25,8 +25,7 @@ public class Refeicao{
     @Column(name = "hora", nullable = false)
     private String hora;
 
-    @ManyToMany(mappedBy = "id")
-    @CollectionTable(name = "opcoes", joinColumns = @JoinColumn(name = "id"))
+    @ManyToMany
     private List<Receita> opcoes;
 
     public Refeicao(String nome, List<Receita> opcoes, String hora) {
