@@ -43,7 +43,6 @@ public class Refeicao{
     }
 
     public static Refeicao dtoToEntity(RefeicaoDTO dto) {
-        System.out.println(new Refeicao( dto.getNome(), dto.getAlimentos(), dto.getHorario()).toString());
         return new Refeicao( dto.getNome(), dto.getAlimentos(), dto.getHorario()) ;
     }
     
