@@ -31,7 +31,7 @@ public class Receita {
         this.ingredientes = ingredientes;
         this.modoPreparo = modoPreparo;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
