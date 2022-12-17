@@ -1,28 +1,41 @@
 package com.example.demo.dto;
 
+import com.example.demo.model.Receita;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class RefeicaoDTO {
     private String nome;
-    private List<String> alimentos; 
-    private String horario; 
+    private List<Receita> opcoes;
+    private String hora;
 
-    public RefeicaoDTO( String nome, List<String> alimentos, String horario ) {
+    public RefeicaoDTO( String nome, List<Receita> opcoes, String hora ) {
         this.nome = nome;
-        this.alimentos = alimentos;
-        this.horario =  horario ;
+        this.opcoes = opcoes;
+        this.hora =  hora ;
     }
 
     public String getNome() { return nome; }
 
-    public List<String> getAlimentos() { return alimentos; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public String getHorario() { return horario; }
+    public List<Receita> getOpcoes() {
+        return opcoes;
+    }
 
-    public void setNome(String nome) { this.nome = nome;}
+    public void setOpcoes(List<Receita> opcoes) {
+        this.opcoes = opcoes;
+    }
 
-    public void setAlimentos( List<String> alimentos ) { this.alimentos = alimentos; }
+    public String getHora() {
+        return hora;
+    }
 
-    public void setHorario( String horario ) { this.horario = horario; }
-
+    public void setHorario(String hora) {
+        this.hora = hora;
+    }
 }
