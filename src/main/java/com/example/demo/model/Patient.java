@@ -21,7 +21,7 @@ public class Patient {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "nome", nullable = false)
     private String name;
 
     @Column(name = "email", nullable = false)
