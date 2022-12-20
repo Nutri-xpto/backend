@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.controllers.PatientController;
 import com.example.demo.dto.NutritionistDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -37,6 +39,9 @@ public class Nutritionist {
     @OneToOne
     private Address clinicAddress;
 
+    @OneToMany
+    private List<Patient> patients;
+
     public Nutritionist(String name, String email, String password, int code, Set<Education> educations, Address clinicAddress) {
         this.name = name;
         this.email = email;
@@ -61,6 +66,12 @@ public class Nutritionist {
 
     public static Nutritionist dtoToEntity(NutritionistDTO dto){
         return new Nutritionist(dto.getName(), dto.getEmail(), dto.getPassword(), dto.getCode(), dto.getEducations(), dto.getClinicAddress()) ;
+    }
+
+    public boolean addPatient(Patient patient){
+        if (patients.contains(patient)) return false;
+        patients.add(patient);
+        return true;
     }
 
     @Override

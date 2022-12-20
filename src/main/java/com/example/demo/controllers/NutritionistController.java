@@ -28,4 +28,6 @@ public class NutritionistController {
     ResponseEntity<Nutritionist> create(@RequestBody NutritionistDTO nutri){
         return new ResponseEntity<Nutritionist>(this.repository.save( Nutritionist.dtoToEntity(nutri)), HttpStatus.CREATED );
     }
+
+
 }
