@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 
-    void delete(Optional<Patient> patient);
+   // void delete(Optional<Patient> patient);
 
 }
