@@ -27,7 +27,7 @@ public class PatientController {
         return new ResponseEntity<>(this.repository.findAll(), HttpStatus.OK);
     }
 
-    @DeleteMapping("/patient")
+   /* @DeleteMapping("/patient")
     ResponseEntity<Patient> delete(@PathVariable Long id){
         try {
             this.repository.delete(this.repository.findById(id));
@@ -36,4 +36,5 @@ public class PatientController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+    */
 }
