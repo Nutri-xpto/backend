@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.dto.PatientDTO;
-import com.example.demo.model.Nutritionist;
 import com.example.demo.model.Patient;
 import com.example.demo.repositories.PatientRepository;
 import org.springframework.http.HttpStatus;
@@ -27,22 +26,14 @@ public class PatientController {
         return new ResponseEntity<>(this.repository.findAll(), HttpStatus.OK);
     }
 
-<<<<<<< HEAD
-/*    @DeleteMapping("/patient")
-=======
-   /* @DeleteMapping("/patient")
->>>>>>> dc855673de90778da8fdd7fb85d03a0c2091ca49
-    ResponseEntity<Patient> delete(@PathVariable Long id){
-        try {
-            this.repository.delete(this.repository.findById(id));
-            return new ResponseEntity<>(HttpStatus.OK);
-        }catch (IllegalArgumentException pat){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-<<<<<<< HEAD
-    }*/
-=======
-    }
-    */
->>>>>>> dc855673de90778da8fdd7fb85d03a0c2091ca49
+
+   @DeleteMapping("/patient")
+    ResponseEntity<Patient> delete(@PathVariable Long id) {
+       try {
+           this.repository.deleteById(id);
+           return new ResponseEntity<>(HttpStatus.OK);
+       } catch (IllegalArgumentException pat) {
+           return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+       }
+   }
 }
