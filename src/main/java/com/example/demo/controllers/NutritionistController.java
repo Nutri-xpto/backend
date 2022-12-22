@@ -30,22 +30,22 @@ public class NutritionistController {
 
     @GetMapping("/nutritionists")
     ResponseEntity<List<Nutritionist>> getAllNutricionists(){
-        return new ResponseEntity<List<Nutritionist>>(this.nutricionistRepository.findAll(), HttpStatus.OK);
+        return service.getAllNutricionists();
     }
 
     @PostMapping("/nutritionist")
     ResponseEntity<Nutritionist> create(@RequestBody NewNutriDTO nutri){
-        return new ResponseEntity<Nutritionist>(this.nutricionistRepository.save( Nutritionist.dtoToEntity(nutri)), HttpStatus.CREATED );
+        return service.createNutricionist(nutri);
     }
 
     @PostMapping("/patient")
-    ResponseEntity<Patient> create(@RequestBody PatientDTO patient){
-        return new ResponseEntity<>(this.patientRepository.save( Patient.dtoToEntity(patient)), HttpStatus.CREATED );
+    ResponseEntity<Object> create(@RequestBody PatientDTO patient){
+       return service.createPatient(patient);
     }
 
     @GetMapping("/patients")
     ResponseEntity<List<Patient>> getAllPatients(){
-        return new ResponseEntity<>(this.patientRepository.findAll(), HttpStatus.OK);
+        return service.getAllPatients();
     }
     @DeleteMapping("/patient")
     ResponseEntity<Object> delete(@PathVariable Long id) {
