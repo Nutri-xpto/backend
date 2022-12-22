@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import com.example.demo.dto.NutritionistDTO;
 import com.example.demo.dto.PatientDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
