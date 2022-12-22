@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.controllers.PatientController;
+import com.example.demo.dto.NewNutriDTO;
 import com.example.demo.dto.NutritionistDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,19 +31,25 @@ public class Nutritionist {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name = "passwordConfirmation", nullable = false)
+    private String passwordConfirmation;
+
     @Column(name = "code", nullable = false)
-    private int code;
+    private String code;
 
-    @OneToMany(mappedBy = "nutritionist")
-    private Set<Education> educations;
+    @Column(name = "educations", nullable = false)
+    private String educations;
 
-    @OneToOne
-    private Address clinicAddress;
+    @Column(name = "clinicAdress", nullable = false)
+    private String clinicAddress;
+
+    @Column(name = "additionalInfo", nullable = false)
+    private String additionalInfo;
 
     @OneToMany
     private List<Patient> patients;
 
-    public Nutritionist(String name, String email, String password, int code, Set<Education> educations, Address clinicAddress) {
+    public Nutritionist(String name, String email, String password, String passwordConfirmation, String code, String educations, String clinicAddress, String city, String additionalInfo) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -64,8 +71,8 @@ public class Nutritionist {
                 '}';
     }
 
-    public static Nutritionist dtoToEntity(NutritionistDTO dto){
-        return new Nutritionist(dto.getName(), dto.getEmail(), dto.getPassword(), dto.getCode(), dto.getEducations(), dto.getClinicAddress()) ;
+    public static Nutritionist dtoToEntity(NewNutriDTO dto){
+        return new Nutritionist(dto.getNome(), dto.getEmail(), dto.getPassword(), dto.getPasswordConfirmacion(), dto.getCode(), dto.getEducation(), dto.getClinicAdress(), dto.getCity(), dto.getAdditionalInfo()) ;
     }
 
     public boolean addPatient(Patient patient){

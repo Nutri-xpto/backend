@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.dto.NewNutriDTO;
 import com.example.demo.dto.NutritionistDTO;
 import com.example.demo.model.Nutritionist;
 import com.example.demo.repositories.NutritionistRepository;
@@ -25,7 +26,7 @@ public class NutritionistController {
     }
 
     @PostMapping("/nutritionist")
-    ResponseEntity<Nutritionist> create(@RequestBody NutritionistDTO nutri){
+    ResponseEntity<Nutritionist> create(@RequestBody NewNutriDTO nutri){
         return new ResponseEntity<Nutritionist>(this.repository.save( Nutritionist.dtoToEntity(nutri)), HttpStatus.CREATED );
     }
 
