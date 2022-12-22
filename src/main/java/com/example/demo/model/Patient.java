@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import com.example.demo.dto.NutritionistDTO;
 import com.example.demo.dto.PatientDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +20,7 @@ public class Patient {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "nome", nullable = false)
     private String name;
 
     @Column(name = "email", nullable = false)
