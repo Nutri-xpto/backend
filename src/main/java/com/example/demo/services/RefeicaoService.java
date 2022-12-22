@@ -24,5 +24,11 @@ public class RefeicaoService {
         return refeicaorepository.save(refeicao);
     }
 
+    public void saveAll(List<Refeicao> refeicoes){
+        for (Refeicao ref: refeicoes){
+            this.save(ref);
+        }
+    }
+
 
 }

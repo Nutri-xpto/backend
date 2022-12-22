@@ -27,7 +27,11 @@ public class PatientController {
         return new ResponseEntity<>(this.repository.findAll(), HttpStatus.OK);
     }
 
+<<<<<<< HEAD
 /*    @DeleteMapping("/patient")
+=======
+   /* @DeleteMapping("/patient")
+>>>>>>> dc855673de90778da8fdd7fb85d03a0c2091ca49
     ResponseEntity<Patient> delete(@PathVariable Long id){
         try {
             this.repository.delete(this.repository.findById(id));
@@ -35,5 +39,10 @@ public class PatientController {
         }catch (IllegalArgumentException pat){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+<<<<<<< HEAD
     }*/
+=======
+    }
+    */
+>>>>>>> dc855673de90778da8fdd7fb85d03a0c2091ca49
 }
